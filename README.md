@@ -1,5 +1,9 @@
 # egl_probe
 
+Author: Fei Xia (feixia@stanford.edu)
+
+Adapted from (https://github.com/erwincoumans/egl_example).
+
 ## Build instruction
 
 ```bash
