@@ -4,15 +4,17 @@ Author: Fei Xia (feixia@stanford.edu)
 
 Adapted from (https://github.com/erwincoumans/egl_example).
 
-## Build instruction
+## Install from pypi
+
+```bash
+pip install egl_probe
+python -m egl_probe.get_available_devices
+```
+
+## Install from source
 
 ```bash
 pip install -e .
-```
-
-## To run:
-
-```bash
 python get_available_devices.py
 ```
 
