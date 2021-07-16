@@ -2,6 +2,7 @@
 NOTE: this is adapted from https://github.com/StanfordVL/iGibson/blob/master/setup.py
 """
 import os
+import sys
 import shutil
 import subprocess
 from setuptools import setup, find_packages
@@ -23,6 +24,13 @@ def build_cmake():
     # build using cmake
     subprocess.check_call("cd egl_probe/build; cmake ..; make -j", shell=True)
 
+if sys.version_info.major == 3:
+    with open("README.md", "r", encoding="utf-8") as fh:
+        long_description = fh.read()
+else:
+    # for python2
+    with open("README.md", "r") as fh:
+        long_description = fh.read()
 
 build_cmake()
 setup(
@@ -35,4 +43,6 @@ setup(
     install_requires=[],
     tests_require=[],
     include_package_data=True,
+    long_description=long_description,
+    long_description_content_type='text/markdown'
 )   #yapf: disable
